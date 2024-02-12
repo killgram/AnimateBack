@@ -18,6 +18,7 @@
     "@types/jsonwebtoken": "^9.0.5",
     "@types/node": "^20.11.17",
     "axios": "^1.6.7",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.1",
@@ -31,7 +32,8 @@
     "response-time": "^2.3.2",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "uuid": "^9.0.1"
   },
   "_moduleAliases": {
     "@configurations": "./src/configurations",
@@ -44,8 +46,10 @@
     "@utils": "./src/utils"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/module-alias": "^2.0.4",
     "@types/morgan": "^1.9.9",
-    "@types/response-time": "^2.3.8"
+    "@types/response-time": "^2.3.8",
+    "@types/uuid": "^9.0.8"
   }
 }

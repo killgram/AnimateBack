@@ -11,7 +11,7 @@ const app: Application = express();
 const PORT = process.env.PORT ?? process.env.APP_PORT;
 
 import { ApiEnum } from "@enums";
-import { CommonRouter } from "@routes";
+import { CommonRouter, AuthRouter } from "@routes";
 import { initRedis } from "@configurations";
 
 // configuration
@@ -23,6 +23,7 @@ app.use(responseTime({ header: "work-time" })); // ms in header
 app.use("/favicon.ico", express.static(`${process.cwd()}/public/favicon.jpeg`));
 
 app.use(ApiEnum.COMMON, CommonRouter);
+app.use(ApiEnum.AUTH, AuthRouter);
 
 // listener
 app.listen(PORT, (): void => {
