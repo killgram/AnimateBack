@@ -12,6 +12,7 @@ const PORT = process.env.PORT ?? process.env.APP_PORT;
 
 import { ApiEnum } from "@enums";
 import { CommonRouter } from "@routes";
+import { initRedis } from "@configurations";
 
 // configuration
 app.use(cors());
@@ -25,5 +26,7 @@ app.use(ApiEnum.COMMON, CommonRouter);
 
 // listener
 app.listen(PORT, (): void => {
-  console.log(`${process.env.APP_NAME} running on port here 👉 ${PORT}`);
+  initRedis().then((_) => {
+    console.log(`${process.env.APP_NAME} running on port here 👉 ${PORT}`);
+  });
 });
