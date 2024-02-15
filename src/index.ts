@@ -12,7 +12,7 @@ const PORT = process.env.PORT ?? process.env.APP_PORT;
 
 import { ApiEnum } from "@enums";
 import { CommonRouter, AuthRouter } from "@routes";
-import { initRedis } from "@configurations";
+import { fbClient, initRedis } from "@configurations";
 
 // configuration
 app.use(cors());
