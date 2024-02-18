@@ -12,6 +12,10 @@ declare global {
       STORAGE_BUCKET: string;
       MESSAGING_SENDER_ID: string;
       APP_ID: string;
+      SH_CLIENT_NAME: string;
+      SH_MAX_CALLS_PER_SECOND: string;
+      SH_MAX_CALLS_PER_MINUTE: string;
+      SH_IMAGE_SOURCE: string;
     }
   }
 }

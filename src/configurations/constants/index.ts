@@ -11,4 +11,8 @@ export const Constants = {
   APP_ID: process.env.APP_ID,
   REDIS: process.env.REDIS,
   HASH_ROUND: process.env.HASH_ROUND,
+  SH_CLIENT_NAME: String(process.env.SH_CLIENT_NAME),
+  SH_MAX_CALLS_PER_SECOND: Number(process.env.SH_MAX_CALLS_PER_SECOND),
+  SH_MAX_CALLS_PER_MINUTE: Number(process.env.SH_MAX_CALLS_PER_MINUTE),
+  SH_IMAGE_SOURCE: process.env.SH_IMAGE_SOURCE,
 };

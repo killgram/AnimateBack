@@ -1,0 +1,1 @@
+export { getNewsService } from "./getNews";
