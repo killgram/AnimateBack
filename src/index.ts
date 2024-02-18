@@ -11,8 +11,8 @@ const app: Application = express();
 const PORT = process.env.PORT ?? process.env.APP_PORT;
 
 import { ApiEnum } from "@enums";
-import { CommonRouter, AuthRouter } from "@routes";
-import { fbClient, initRedis } from "@configurations";
+import { CommonRouter, AuthRouter, WebRouter } from "@routes";
+import { Constants, fbClient, initRedis } from "@configurations";
 
 // configuration
 app.use(cors());
@@ -24,10 +24,11 @@ app.use("/favicon.ico", express.static(`${process.cwd()}/public/favicon.jpeg`));
 
 app.use(ApiEnum.COMMON, CommonRouter);
 app.use(ApiEnum.AUTH, AuthRouter);
+app.use(ApiEnum.WEB, WebRouter);
 
 // listener
 app.listen(PORT, (): void => {
   initRedis().then((_) => {
-    console.log(`${process.env.APP_NAME} running on port here 👉 ${PORT}`);
+    console.log(`${Constants.APP_NAME} running on port here 👉 ${PORT}`);
   });
 });

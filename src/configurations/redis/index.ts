@@ -1,8 +1,8 @@
 import { createClient } from "redis";
-import * as process from "process";
+import { Constants } from "@configurations/constants";
 
 const client = createClient({
-  url: process.env.REDIS,
+  url: Constants.REDIS,
 });
 
 const initRedis = async () => {

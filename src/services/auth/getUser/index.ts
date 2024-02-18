@@ -1,14 +1,12 @@
-import { client } from "@configurations";
+import { client, Constants } from "@configurations";
 import { AuthTypes } from "@types";
 import { compareHash, generateAccessToken } from "@utils";
-import * as process from "process";
 import { TablesEnum } from "@enums";
 
 const getUser = async (
   login: string,
   password: string,
 ): Promise<AuthTypes.ISignIn> => {
-  const processToken = process.env.ACCESS_TOKEN_SECRET ?? "";
   const processedLogin = login.trim();
   const processedPassword = password.trim();
   const users = await client.lRange(TablesEnum.USERS, 0, -1);
@@ -43,7 +41,10 @@ const getUser = async (
     uid: processedUserData?.uid,
     releaseTime: Date.now(),
   };
-  const accessToken = generateAccessToken(secureData, processToken);
+  const accessToken = generateAccessToken(
+    secureData,
+    Constants.ACCESS_TOKEN_SECRET,
+  );
 
   return {
     isError: false,

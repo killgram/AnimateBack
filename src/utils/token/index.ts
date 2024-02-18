@@ -13,4 +13,8 @@ const verifyAccessToken = (
   });
 };
 
-export { generateAccessToken, verifyAccessToken };
+const decodeTokenParams = (token: string, accessToken: string) => {
+  return jwt.verify(token, accessToken);
+};
+
+export { generateAccessToken, verifyAccessToken, decodeTokenParams };

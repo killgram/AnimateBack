@@ -1,9 +1,8 @@
-import { client } from "@configurations";
+import { client, Constants } from "@configurations";
 import { AuthTypes } from "@types";
 import { v4 as uuidv4 } from "uuid";
 import { TablesEnum } from "@enums";
 import { encodeHash } from "@utils";
-import * as process from "process";
 
 const createUser = async (
   login: string,
@@ -13,7 +12,7 @@ const createUser = async (
   const processedPassword = password.trim();
   const hashPassword = await encodeHash(
     processedPassword,
-    Number(process.env.HASH_ROUND),
+    Number(Constants.HASH_ROUND),
   );
   const newUserData: AuthTypes.IUser = {
     login: processedLogin,

@@ -1,14 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import * as process from "process";
+import { Constants } from "@configurations/constants";
 
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
-  authDomain: process.env.AUTH_DOMAIN,
-  projectId: process.env.PROJECT_ID,
-  storageBucket: process.env.STORAGE_BUCKET,
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID,
+  apiKey: Constants.API_KEY,
+  authDomain: Constants.AUTH_DOMAIN,
+  projectId: Constants.PROJECT_ID,
+  storageBucket: Constants.STORAGE_BUCKET,
+  messagingSenderId: Constants.MESSAGING_SENDER_ID,
+  appId: Constants.APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
