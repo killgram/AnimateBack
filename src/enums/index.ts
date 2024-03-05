@@ -2,7 +2,7 @@ import { ApiEnum } from "./api";
 import { CommonRoutesEnum } from "./commonRoutes";
 import { AuthRoutesEnum } from "./authRoutes";
 import { ErrorsEnum } from "./errors";
-import { TablesEnum } from "./tables";
+import { TablesEnum, NewsSource } from "./tables";
 import { WebRoutesEnum } from "./webRoutes";
 
 export {
@@ -12,4 +12,5 @@ export {
   ErrorsEnum,
   TablesEnum,
   WebRoutesEnum,
+  NewsSource,
 };

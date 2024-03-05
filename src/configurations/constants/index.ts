@@ -15,4 +15,5 @@ export const Constants = {
   SH_MAX_CALLS_PER_SECOND: Number(process.env.SH_MAX_CALLS_PER_SECOND),
   SH_MAX_CALLS_PER_MINUTE: Number(process.env.SH_MAX_CALLS_PER_MINUTE),
   SH_IMAGE_SOURCE: process.env.SH_IMAGE_SOURCE,
+  MONGODB_URL: process.env.MONGODB_URL ?? "",
 };

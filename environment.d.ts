@@ -16,6 +16,7 @@ declare global {
       SH_MAX_CALLS_PER_SECOND: string;
       SH_MAX_CALLS_PER_MINUTE: string;
       SH_IMAGE_SOURCE: string;
+      MONGODB_URL: string;
     }
   }
 }
