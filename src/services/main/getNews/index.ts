@@ -22,7 +22,6 @@ const getNewsService = async (
       }
       default: {
         data[NewsSource.SH] = await getSHNews(dbClient);
-        data[NewsSource.AL] = await getALNews(dbClient);
       }
     }
 
