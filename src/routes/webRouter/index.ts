@@ -10,4 +10,10 @@ router.get(
   WebControllers.getNews,
 );
 
+router.get(
+  WebRoutesEnum.GET_NEWS_COMMENTS,
+  WebMiddleware.authenticate,
+  WebControllers.getNewsComments,
+);
+
 export { router as WebRouter };
